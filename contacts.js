@@ -4,7 +4,7 @@ const crypto = require("crypto");
 
 const contactsPath = async () => {
   const content = await fs.readFile(
-    path.join(__dirname, "operations", "db", "contacts.json"),
+    path.join(__dirname, "contacts", "db", "contacts.json"),
     "utf8"
   );
   const result = JSON.parse(content);
@@ -32,7 +32,7 @@ const removeContact = async (contactId) => {
   }
   const update = contacts.splice(getId, 1);
   await fs.writeFile(
-    path.join(__dirname, "operations", "db", "contacts.json"),
+    path.join(__dirname, "contacts", "db", "contacts.json"),
 
     JSON.stringify(contacts, null, 4)
   );
@@ -44,7 +44,7 @@ const addContact = async (name, email, phone) => {
   const newContact = { id: crypto.randomUUID(), name, email, phone };
   contacts.push(newContact);
   await fs.writeFile(
-    path.join(__dirname, "operations", "db", "contacts.json"),
+    path.join(__dirname, "contacts", "db", "contacts.json"),
     JSON.stringify(contacts, null, 4)
   );
   return newContact;
