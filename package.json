@@ -1,7 +1,7 @@
 {
   "name": "goit-node-hw-01-cli",
   "version": "1.0.0",
-  "description": "",
+  "description": "# Получаем и выводим весь список контактов в виде таблицы (console.table)",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
