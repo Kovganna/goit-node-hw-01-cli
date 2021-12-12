@@ -1,9 +1,9 @@
-var colors = require("colors");
+const colors = require("colors");
 const { Command } = require("commander");
-const addContact = require("./components/addContact");
-const getContactById = require("./components/getContactById");
-const listContacts = require("./components/listContacts");
-const removeContact = require("./components/removeContact");
+const addContact = require("./addContact");
+const getContactById = require("./getContactById");
+const listContacts = require("./listContacts");
+const removeContact = require("./removeContact");
 
 const program = new Command();
 program
@@ -57,6 +57,10 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
   }
 };
 
-invokeAction(argv).then(() => console.log("Success"));
+// invokeAction(argv).then(() => console.log("Success"));
+
+(async () => {
+  await invokeAction(argv);
+})();
 
 module.exports = invokeAction;

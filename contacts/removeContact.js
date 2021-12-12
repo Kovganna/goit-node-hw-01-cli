@@ -13,7 +13,7 @@ const removeContact = async (contactId) => {
   }
   const update = contacts.splice(getId, 1);
   await fs.writeFile(
-    path.join(__dirname, "contacts", "db", "contacts.json"),
+    path.join(__dirname, "../db", "contacts.json"),
 
     JSON.stringify(contacts, null, 4)
   );
